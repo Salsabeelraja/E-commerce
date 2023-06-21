@@ -20,7 +20,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           child: Stack(
             children: [
               SizedBox(height: 16,),
-              Icon(Icons.arrow_back,size: 28,),
+              IconButton(onPressed: (){
+                Navigator.of(context).pop();
+              },icon: Icon(Icons.arrow_back,size: 28,)),
               Column(
                 children: [
                   SizedBox(height: 80,),

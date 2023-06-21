@@ -11,8 +11,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         bottomNavigationBar: Container(
           child: Row(
             children: [
@@ -26,16 +25,15 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               IconButton(
                 onPressed: () {},
-                icon: SvgPicture.asset('assets/icons/ShopIcon.svg'),
+                icon: SvgPicture.asset('assets/icons/Shop Icon.svg'),
               ),
               IconButton(
                 onPressed: () {},
-                icon: SvgPicture.asset('assets/icons/ShopIcon.svg'),
+                icon: SvgPicture.asset('assets/icons/Shop Icon.svg'),
               ),
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }

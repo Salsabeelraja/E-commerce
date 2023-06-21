@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           children: [
             SizedBox(
-              height: 26,
+              height: 40,
             ),
             Text(
               'TOKOTO',
@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: 36,
+              height: 43,
             ),
             ImageSlideshow(
               width: 300,

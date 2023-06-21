@@ -24,7 +24,9 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Stack(
             children: [
               SizedBox(height: 16,),
-              Icon(Icons.arrow_back,size: 28,),
+              IconButton(onPressed: (){
+                Navigator.of(context).pop();
+              },icon: Icon(Icons.arrow_back,size: 28,)),
               SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -98,6 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           },child: Text('Forgot Password',
                             style: TextStyle(
                               decoration: TextDecoration.underline,
+                              color: Colors.grey,
                             ),)),
                         ),
                       ],
@@ -128,7 +131,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         MaterialButton(
                           onPressed: () {},
                           shape: CircleBorder(),
-                          color: Colors.white70,
+                          elevation: 0.09,
+                          color: Colors.blueGrey.shade50,
                           child: SvgPicture.asset('assets/icons/google-icon.svg'),
                         ),
                         SizedBox(
@@ -137,7 +141,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         MaterialButton(
                           onPressed: () {},
                           shape: CircleBorder(),
-                          color: Colors.white70,
+                          elevation: 0.09,
+                          color: Colors.blueGrey.shade50,
                           child: SvgPicture.asset('assets/icons/facebook-2.svg'),
                         ),
                         SizedBox(
@@ -146,7 +151,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         MaterialButton(
                           onPressed: () {},
                           shape: CircleBorder(),
-                          color: Colors.white70,
+                          elevation: 0.09,
+                          color: Colors.blueGrey.shade50,
                           child: SvgPicture.asset('assets/icons/twitter.svg'),
                         ),
                       ],

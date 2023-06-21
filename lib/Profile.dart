@@ -21,7 +21,9 @@ class _ProfileState extends State<Profile> {
               SizedBox(
                 height: 8,
               ),
-              Icon(Icons.arrow_back, size: 28),
+              IconButton(onPressed: (){
+                Navigator.of(context).pop();
+              },icon: Icon(Icons.arrow_back,size: 28,)),
               SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

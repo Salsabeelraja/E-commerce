@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/HomeScreen.dart';
 import 'package:flutter/material.dart';
 
 class SuccessScreen extends StatefulWidget {
@@ -28,7 +29,12 @@ class _SuccessScreenState extends State<SuccessScreen> {
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 50,),
-              MaterialButton(onPressed: (){},
+              MaterialButton(onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomeScreen()),
+                );
+              },
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(16)),
                 ),
