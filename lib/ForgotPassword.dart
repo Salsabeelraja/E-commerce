@@ -14,15 +14,20 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white24,
+          leading:
+          IconButton(onPressed: () {
+            Navigator.of(context).pop();
+          }, icon: Icon(Icons.arrow_back, size: 28,color: Colors.black,)),
+        ),
         body: Container(
           alignment: AlignmentDirectional.center,
           margin: EdgeInsets.all(18),
           child: Stack(
             children: [
               SizedBox(height: 16,),
-              IconButton(onPressed: (){
-                Navigator.of(context).pop();
-              },icon: Icon(Icons.arrow_back,size: 28,)),
               Column(
                 children: [
                   SizedBox(height: 80,),

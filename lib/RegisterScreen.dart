@@ -15,21 +15,26 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+          appBar: AppBar(
+            elevation: 0,
+            backgroundColor: Colors.white24,
+            leading:
+            IconButton(onPressed: () {
+              Navigator.of(context).pop();
+            }, icon: Icon(Icons.arrow_back, size: 28,color: Colors.black,)),
+          ),
           body: Container(
             margin: EdgeInsets.all(16),
             child: Stack(children: [
               SizedBox(
-                height: 16,
+                height: 10,
               ),
-              IconButton(onPressed: () {
-                Navigator.pop(context);
-              }, icon: Icon(Icons.arrow_back, size: 28,)),
               SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   //crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 90),
+                    SizedBox(height: 18),
                     Text(
                       'Register Account',
                       style: TextStyle(
@@ -38,13 +43,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           fontWeight: FontWeight.bold),
                       textAlign: TextAlign.center,
                     ),
+                    SizedBox(height: 3,),
                     Text(
                       'Complete your details or continue with social media',
                       style: TextStyle(
                           fontSize: 12,
                           color: Colors.grey,
-                          fontFamily: 'Muli',
-                          fontWeight: FontWeight.bold),
+                          fontFamily: 'Muli'),
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: 40),
@@ -155,11 +160,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       height: 18,
                     ),
                     Text(
-                      'By continue your confirm that you agree',
+                      'By continue your confirm that you agree \n'
+                          'with our Terms and Conditions',
                       style: TextStyle(
+                        //fontSize: 12,
                           color: Colors.grey,
-                          fontFamily: 'Muli',
-                          fontWeight: FontWeight.bold),
+                          fontFamily: 'Muli',),
                       textAlign: TextAlign.center,
                     )
                   ],

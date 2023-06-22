@@ -18,20 +18,25 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white24,
+          leading:
+          IconButton(onPressed: () {
+            Navigator.of(context).pop();
+          }, icon: Icon(Icons.arrow_back, size: 28,color: Colors.black,)),
+        ),
         body: Container(
           alignment: AlignmentDirectional.center,
           margin: EdgeInsets.all(18),
           child: Stack(
             children: [
               SizedBox(height: 16,),
-              IconButton(onPressed: (){
-                Navigator.of(context).pop();
-              },icon: Icon(Icons.arrow_back,size: 28,)),
               SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(height: 60,),
+                    SizedBox(height: 20,),
                     Text('Welcome Back',
                       style: TextStyle(
                           fontSize: 28,

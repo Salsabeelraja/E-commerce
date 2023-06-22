@@ -13,6 +13,11 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         bottomNavigationBar: Container(
+          //padding: EdgeInsets.symmetric(vertical: 15),
+          /*decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(40), topRight: Radius.circular(40)),
+          )*/
           child: Row(
             children: [
               IconButton(

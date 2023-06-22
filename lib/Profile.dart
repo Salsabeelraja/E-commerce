@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/HomeScreen.dart';
 import 'package:flutter/material.dart';
 
 import 'SuccessScreen.dart';
@@ -14,6 +15,14 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+          appBar: AppBar(
+            elevation: 0,
+            backgroundColor: Colors.white24,
+            leading:
+            IconButton(onPressed: () {
+              Navigator.of(context).pop();
+            }, icon: Icon(Icons.arrow_back, size: 28,color: Colors.black,)),
+          ),
           body: Container(
             width: double.infinity,
             margin: EdgeInsets.all(14),
@@ -21,15 +30,12 @@ class _ProfileState extends State<Profile> {
               SizedBox(
                 height: 8,
               ),
-              IconButton(onPressed: (){
-                Navigator.of(context).pop();
-              },icon: Icon(Icons.arrow_back,size: 28,)),
               SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   //crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 70),
+                    SizedBox(height: 35),
                     Text(
                       'Complete Profile',
                       style: TextStyle(
@@ -38,13 +44,13 @@ class _ProfileState extends State<Profile> {
                           fontWeight: FontWeight.bold),
                       textAlign: TextAlign.center,
                     ),
+                    SizedBox(height: 3,),
                     Text(
                       'Complete your details or continue \n with social media',
                       style: TextStyle(
-                          fontSize: 12,
+                          fontSize: 13,
                           color: Colors.grey,
-                          fontFamily: 'Muli',
-                          fontWeight: FontWeight.bold),
+                          fontFamily: 'Muli',),
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: 30),
@@ -122,7 +128,7 @@ class _ProfileState extends State<Profile> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const SuccessScreen()),
+                          MaterialPageRoute(builder: (context) => const HomeScreen()),
                         );
                       },
                       height: 50,
@@ -142,8 +148,7 @@ class _ProfileState extends State<Profile> {
                           'with our Terms and Conditions',
                       style: TextStyle(
                           color: Colors.grey,
-                          fontFamily: 'Muli',
-                          fontWeight: FontWeight.bold),
+                          fontFamily: 'Muli',),
                       textAlign: TextAlign.center,
                     )
                   ],
