@@ -13,12 +13,13 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         bottomNavigationBar: Container(
-          //padding: EdgeInsets.symmetric(vertical: 15),
-          /*decoration: BoxDecoration(
+          padding: EdgeInsets.symmetric(vertical: 15),
+          decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(topLeft: Radius.circular(40), topRight: Radius.circular(40)),
-          )*/
+          ),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconButton(
                   onPressed: () {},
@@ -30,11 +31,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               IconButton(
                 onPressed: () {},
-                icon: SvgPicture.asset('assets/icons/Shop Icon.svg'),
+                icon: SvgPicture.asset('assets/icons/Chat bubble Icon.svg'),
               ),
               IconButton(
                 onPressed: () {},
-                icon: SvgPicture.asset('assets/icons/Shop Icon.svg'),
+                icon: SvgPicture.asset('assets/icons/User Icon.svg'),
               ),
             ],
           ),
