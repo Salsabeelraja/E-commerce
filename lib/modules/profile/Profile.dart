@@ -1,7 +1,7 @@
-import 'package:e_commerce_app/HomeScreen.dart';
 import 'package:flutter/material.dart';
 
-import 'SuccessScreen.dart';
+import '../home/HomeScreen.dart';
+import '../success/SuccessScreen.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});

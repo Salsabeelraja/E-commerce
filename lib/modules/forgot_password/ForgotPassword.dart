@@ -1,5 +1,5 @@
-import 'package:e_commerce_app/LoginScreen.dart';
-import 'package:e_commerce_app/RegisterScreen.dart';
+import 'package:e_commerce_app/modules/login/LoginScreen.dart';
+import 'package:e_commerce_app/modules/register/RegisterScreen.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPassword extends StatefulWidget {

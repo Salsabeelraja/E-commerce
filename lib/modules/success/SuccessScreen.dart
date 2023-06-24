@@ -1,5 +1,6 @@
-import 'package:e_commerce_app/HomeScreen.dart';
 import 'package:flutter/material.dart';
+
+import '../home/HomeScreen.dart';
 
 class SuccessScreen extends StatefulWidget {
   const SuccessScreen({super.key});

@@ -1,12 +1,12 @@
-import 'package:e_commerce_app/ForgotPassword.dart';
-import 'package:e_commerce_app/LoginScreen.dart';
-import 'package:e_commerce_app/Profile.dart';
-import 'package:e_commerce_app/SplashScreen.dart';
+import 'package:e_commerce_app/modules/forgot_password/ForgotPassword.dart';
+import 'package:e_commerce_app/modules/login/LoginScreen.dart';
+import 'package:e_commerce_app/modules/profile/Profile.dart';
+import 'package:e_commerce_app/modules/splash/SplashScreen.dart';
 import 'package:e_commerce_app/size_config.dart';
 import 'package:flutter/material.dart';
 
-import 'RegisterScreen.dart';
-import 'SuccessScreen.dart';
+import 'modules/register/RegisterScreen.dart';
+import 'modules/success/SuccessScreen.dart';
 
 void main() {
   runApp(const MyApp());

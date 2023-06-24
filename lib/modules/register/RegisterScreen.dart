@@ -1,7 +1,10 @@
-import 'package:e_commerce_app/LoginScreen.dart';
-import 'package:e_commerce_app/Profile.dart';
+import 'package:e_commerce_app/modules/login/LoginScreen.dart';
+import 'package:e_commerce_app/modules/profile/Profile.dart';
+import 'package:e_commerce_app/shared/component/defaultButton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../shared/component/defaultSocialButton.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -103,57 +106,28 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     SizedBox(
                       height: 40,
                     ),
-                    MaterialButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (
-                              context) => const Profile()),
-                        );
-                      },
-                      height: 50,
-                      minWidth: 400,
-                      child: Text('Continue'),
-                      textColor: Colors.white,
-                      color: Colors.deepOrange,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                    ),
+                    defaultButton(function:  () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (
+                            context) => const Profile()),
+                      );
+                    }, text: 'Continue'),
                     SizedBox(
                       height: 40,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        MaterialButton(
-                          onPressed: () {},
-                          shape: CircleBorder(),
-                          elevation: 0.09,
-                          color: Colors.blueGrey.shade50,
-                          child: SvgPicture.asset(
-                              'assets/icons/google-icon.svg'),
-                        ),
+                        defaultSocialButton(assetPath: 'assets/icons/google-icon.svg'),
                         SizedBox(
                           height: 2,
                         ),
-                        MaterialButton(
-                          onPressed: () {},
-                          shape: CircleBorder(),
-                          elevation: 0.09,
-                          color: Colors.blueGrey.shade50,
-                          child: SvgPicture.asset(
-                              'assets/icons/facebook-2.svg'),
-                        ),
+                        defaultSocialButton(assetPath: 'assets/icons/facebook-2.svg'),
                         SizedBox(
                           height: 2,
                         ),
-                        MaterialButton(
-                          onPressed: () {},
-                          shape: CircleBorder(),
-                          elevation: 0.09,
-                          color: Colors.blueGrey.shade50,
-                          child: SvgPicture.asset('assets/icons/twitter.svg'),
-                        ),
+                        defaultSocialButton(assetPath: 'assets/icons/twitter.svg'),
                       ],
                     ),
                     SizedBox(
