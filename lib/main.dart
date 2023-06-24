@@ -2,6 +2,7 @@ import 'package:e_commerce_app/ForgotPassword.dart';
 import 'package:e_commerce_app/LoginScreen.dart';
 import 'package:e_commerce_app/Profile.dart';
 import 'package:e_commerce_app/SplashScreen.dart';
+import 'package:e_commerce_app/size_config.dart';
 import 'package:flutter/material.dart';
 
 import 'RegisterScreen.dart';
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Muli'),
       debugShowCheckedModeBanner: false,

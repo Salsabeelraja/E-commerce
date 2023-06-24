@@ -30,7 +30,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               SizedBox(height: 16,),
               Column(
                 children: [
-                  SizedBox(height: 80,),
+                  SizedBox(height: 40,),
                   Text('Forgot Password',
                   style: TextStyle(
                     fontSize: 28,
