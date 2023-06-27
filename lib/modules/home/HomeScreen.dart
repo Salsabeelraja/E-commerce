@@ -1,11 +1,8 @@
 import 'package:e_commerce_app/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:size_config/size_config.dart';
-
-import 'body.dart';
-import 'categories.dart';
-import 'custom_bottom_nav.dart';
+import 'components/body.dart';
+import 'components/custom_bottom_nav.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

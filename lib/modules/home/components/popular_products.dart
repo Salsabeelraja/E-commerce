@@ -1,10 +1,10 @@
 import 'package:e_commerce_app/models/Product.dart';
-import 'package:e_commerce_app/modules/home/product_container.dart';
+import 'package:e_commerce_app/modules/home/components/product_container.dart';
+import 'package:e_commerce_app/modules/home/components/section_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../size_config.dart';
-import 'section_text.dart';
+import '../../../size_config.dart';
 
 class PopularProducts extends StatelessWidget {
   const PopularProducts({super.key});

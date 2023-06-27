@@ -1,7 +1,7 @@
+import 'package:e_commerce_app/modules/home/components/section_text.dart';
 import 'package:flutter/material.dart';
 
-import '../../size_config.dart';
-import 'section_text.dart';
+import '../../../size_config.dart';
 
 class SpecialForYou extends StatelessWidget {
   const SpecialForYou({super.key});

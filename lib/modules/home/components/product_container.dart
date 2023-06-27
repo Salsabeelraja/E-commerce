@@ -1,12 +1,12 @@
 import 'package:e_commerce_app/models/Product.dart';
-import 'package:e_commerce_app/modules/details_screen/detailsScreen.dart';
+import 'package:e_commerce_app/modules/details_screen/details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../size_config.dart';
+import '../../../size_config.dart';
 
 class ProductContainer extends StatelessWidget {
-   ProductContainer({
+  ProductContainer({
     super.key,
     required this.product,
   });
@@ -19,8 +19,8 @@ class ProductContainer extends StatelessWidget {
       width: getProportionateScreenWidth(400),
       padding: EdgeInsets.all(getProportionateScreenWidth(50)),
       child: GestureDetector(
-        onTap: () => Navigator.push(
-            context, MaterialPageRoute(builder: (context) => DetailsScreen())),
+        onTap: () => Navigator.push(context,
+        MaterialPageRoute(builder: (context) => DetailsScreen(product: product))),
         child: Column(
           children: [
             Container(
@@ -62,8 +62,7 @@ class ProductContainer extends StatelessWidget {
                   width: getProportionateScreenWidth(80),
                 ),
                 InkWell(
-                  onTap: () {
-                  },
+                  onTap: () {},
                   borderRadius: BorderRadius.circular(30),
                   child: Container(
                     padding: EdgeInsets.all(getProportionateScreenWidth(10)),
@@ -77,8 +76,8 @@ class ProductContainer extends StatelessWidget {
                     child: SvgPicture.asset(
                       'assets/icons/Heart Icon_2.svg',
                       color: product.isFavourite
-                          ?  Color(0xFFDBDEE4)
-                          :  Color(0xFFFF4848),
+                          ? Color(0xFFDBDEE4)
+                          : Color(0xFFFF4848),
                     ),
                   ),
                 )

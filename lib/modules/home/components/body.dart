@@ -1,10 +1,10 @@
+import 'package:e_commerce_app/modules/home/components/special_for_you.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../size_config.dart';
+import '../../../size_config.dart';
 import 'categories.dart';
 import 'popular_products.dart';
-import 'special_for_you.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
