@@ -18,16 +18,16 @@ class _ProductImagesState extends State<ProductImages> {
       children: [
         SizedBox(
           width: getProportionateScreenWidth(460),
-          child: Image.asset(widget.product.images[selectedImg],height: 150,),
+          child: Image.asset(widget.product.image,height: 150,),
         ),
         SizedBox(height: getProportionateScreenWidth(50),),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          /*children: [
             ...List.generate(widget.product.images.length,
                     (index) => createSmallImagesPreview(index),
             )
-          ],
+          ],*/
         )
       ],
     );
@@ -53,7 +53,7 @@ class _ProductImagesState extends State<ProductImages> {
             color: Color(0xFFFF7643).withOpacity(selectedImg == index ? 1 : 0)
           )
         ),
-        child: Image.asset(widget.product.images[index],),
+        child: Image.asset(widget.product.image,),
       ),
     );
   }

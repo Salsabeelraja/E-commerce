@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import '../home/HomeScreen.dart';
 import '../success/SuccessScreen.dart';
 
-class Profile extends StatefulWidget {
-  const Profile({super.key});
+class CompleteProfile extends StatefulWidget {
+  const CompleteProfile({super.key});
 
   @override
-  State<Profile> createState() => _ProfileState();
+  State<CompleteProfile> createState() => _CompleteProfileState();
 }
 
-class _ProfileState extends State<Profile> {
+class _CompleteProfileState extends State<CompleteProfile> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -37,7 +37,7 @@ class _ProfileState extends State<Profile> {
                   children: [
                     SizedBox(height: 35),
                     Text(
-                      'Complete Profile',
+                      'Complete CompleteProfile',
                       style: TextStyle(
                           fontSize: 28,
                           fontFamily: 'Muli',

@@ -17,7 +17,7 @@ class PopularProducts extends StatelessWidget {
           height: getProportionateScreenWidth(50),
         ),
         SectionText(text: 'Popular Products'),
-        SingleChildScrollView(
+        /*SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -36,7 +36,7 @@ class PopularProducts extends StatelessWidget {
               )
             ],
           ),
-        ),
+        ),*/
       ],
     );
   }

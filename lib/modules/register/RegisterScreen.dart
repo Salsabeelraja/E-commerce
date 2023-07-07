@@ -1,10 +1,10 @@
 import 'package:e_commerce_app/modules/login/LoginScreen.dart';
-import 'package:e_commerce_app/modules/profile/Profile.dart';
 import 'package:e_commerce_app/shared/component/defaultButton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../shared/component/defaultSocialButton.dart';
+import '../comlete_profile/Profile.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -110,7 +110,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (
-                            context) => const Profile()),
+                            context) => const CompleteProfile()),
                       );
                     }, text: 'Continue'),
                     SizedBox(

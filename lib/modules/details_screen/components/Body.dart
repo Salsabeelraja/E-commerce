@@ -27,7 +27,7 @@ class Body extends StatelessWidget {
             TopRoundedContainer(color: Color(0xFFF6F7F9),
             child: Column(
               children: [
-                ColorPickDots(product: product),
+                //ColorPickDots(product: product),
                 TopRoundedContainer(
                     color: Colors.white,
                 child: Padding(

@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/shared/component/enums.dart';
 import 'package:e_commerce_app/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -117,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         body: Body(),
-        bottomNavigationBar: CustomBottomNav(),
+        bottomNavigationBar: CustomBottomNav(menu: MenuState.home),
       ),
     );
   }

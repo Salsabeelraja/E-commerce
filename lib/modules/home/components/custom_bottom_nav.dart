@@ -1,9 +1,13 @@
+import 'package:e_commerce_app/modules/profile_screen/ProfileScreen.dart';
+import 'package:e_commerce_app/shared/component/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomBottomNav extends StatelessWidget {
-  const CustomBottomNav({super.key});
+  const CustomBottomNav({super.key,
+  required  this.menu});
 
+  final MenuState menu;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -31,8 +35,14 @@ class CustomBottomNav extends StatelessWidget {
               icon: SvgPicture.asset('assets/icons/Chat bubble Icon.svg'),
             ),
             IconButton(
-              onPressed: () {},
-              icon: SvgPicture.asset('assets/icons/User Icon.svg'),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileScreen()));
+              },
+              icon: SvgPicture.asset('assets/icons/User Icon.svg',
+               color: menu == MenuState.profile
+                ? Colors.deepOrange
+                : Colors.grey,
+              ),
             ),
           ],
         ),

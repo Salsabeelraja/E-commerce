@@ -20,7 +20,7 @@ class _ColorPickDotsState extends State<ColorPickDots> {
       horizontal: getProportionateScreenWidth(40),
     ),
       child: Row(
-        children: [
+        /*children: [
           ...List.generate(widget.product.colors.length,
                   (index) => ColorDots( widget.product.colors[index],
                    index)),
@@ -28,7 +28,7 @@ class _ColorPickDotsState extends State<ColorPickDots> {
           RoundedButton(icon: Icon(Icons.remove), press: () {}),
           SizedBox(width: getProportionateScreenWidth(20),),
           RoundedButton(icon: Icon(Icons.add), press: () {}),
-        ],
+        ],*/
       ),
     );
   }

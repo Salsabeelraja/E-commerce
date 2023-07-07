@@ -26,14 +26,14 @@ class ProductDesc extends StatelessWidget {
             padding: EdgeInsets.all(getProportionateScreenWidth(30)),
             width: getProportionateScreenWidth(130),
             decoration: BoxDecoration(
-                color: product.isFavourite ?  Color(0xFFF5F6F9) : Color(0xFFFFE6E6),
+                color: /*product.isFavourite ?  Color(0xFFF5F6F9) :*/ Color(0xFFFFE6E6),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),
                   bottomLeft: Radius.circular(20),
                 )
             ),
             child: SvgPicture.asset('assets/icons/Heart Icon_2.svg',
-              color: product.isFavourite ? Color(0XFFDBDEE4) : Color(0XFFFF4848),
+              color: /*product.isFavourite ? Color(0XFFDBDEE4) :*/ Color(0XFFFF4848),
               height: getProportionateScreenWidth(36),
             ),
           ),
@@ -42,7 +42,7 @@ class ProductDesc extends StatelessWidget {
             left: getProportionateScreenWidth(26),
             right: getProportionateScreenWidth(70)
         ),
-          child: Text(product.description,maxLines: 3,),
+          child: Text(product.title,maxLines: 3,),
         ),
         Padding(padding: EdgeInsets.symmetric(
           horizontal: getProportionateScreenWidth(26),
