@@ -6,9 +6,11 @@ class SectionText extends StatelessWidget {
   const SectionText({
     super.key,
    required this.text,
+    required this.function,
 });
 
   final String text;
+  final Function() function;
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +23,13 @@ class SectionText extends StatelessWidget {
             color: Colors.black,
             fontSize: getProportionateScreenWidth(45),
           ),),
-          Text('See More', style: TextStyle(
-              color: Colors.grey[500],
-              fontSize: getProportionateScreenWidth(30)
-          ),)
+          TextButton(
+            onPressed: function,
+            child: Text('See More', style: TextStyle(
+                color: Colors.grey[500],
+                fontSize: getProportionateScreenWidth(30)
+            ),),
+          )
         ],
       ),
     );

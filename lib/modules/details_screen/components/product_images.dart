@@ -3,8 +3,8 @@ import 'package:e_commerce_app/size_config.dart';
 import 'package:flutter/material.dart';
 
 class ProductImages extends StatefulWidget {
-  const ProductImages({super.key, required this.product});
-  final Product product;
+  const ProductImages({super.key, required this.image});
+  final String image;
 
   @override
   State<ProductImages> createState() => _ProductImagesState();
@@ -18,26 +18,27 @@ class _ProductImagesState extends State<ProductImages> {
       children: [
         SizedBox(
           width: getProportionateScreenWidth(460),
-          child: Image.asset(widget.product.image,height: 150,),
+          child: Image.network(widget.image,height: 150,),
         ),
         SizedBox(height: getProportionateScreenWidth(50),),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          /*children: [
-            ...List.generate(widget.product.images.length,
+          children: [
+            createSmallImagesPreview(widget.image),
+            /*...List.generate(widget.product.images.length,
                     (index) => createSmallImagesPreview(index),
-            )
-          ],*/
+            )*/
+          ],
         )
       ],
     );
   }
 
-  GestureDetector createSmallImagesPreview(int index) {
+  GestureDetector createSmallImagesPreview(String image) {
     return GestureDetector(
       onTap: () {
         setState(() {
-          selectedImg = index;
+          //selectedImg = index;
         });
       },
       child: AnimatedContainer(
@@ -50,10 +51,10 @@ class _ProductImagesState extends State<ProductImages> {
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(//0xFFFF7643
-            color: Color(0xFFFF7643).withOpacity(selectedImg == index ? 1 : 0)
+            color: Color(0xFFFF7643).withOpacity(1)
           )
         ),
-        child: Image.asset(widget.product.image,),
+        child: Image.network(widget.image,),
       ),
     );
   }

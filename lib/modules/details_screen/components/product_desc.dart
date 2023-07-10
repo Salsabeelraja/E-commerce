@@ -5,9 +5,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../models/Product.dart';
 
 class ProductDesc extends StatelessWidget {
-  const ProductDesc({super.key, required this.product, this.pressSeeMore});
+  const ProductDesc({super.key, required this.title, this.pressSeeMore});
 
-  final Product product;
+  final String title;
   final GestureTapCallback? pressSeeMore;
 
   @override
@@ -17,7 +17,7 @@ class ProductDesc extends StatelessWidget {
       children: [
         Padding(padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(45)),
           child: Text(
-            product.title,
+            title,
             style: Theme.of(context).textTheme.headline6,
           ),),
         Align(
@@ -42,7 +42,7 @@ class ProductDesc extends StatelessWidget {
             left: getProportionateScreenWidth(26),
             right: getProportionateScreenWidth(70)
         ),
-          child: Text(product.title,maxLines: 3,),
+          child: Text(title,maxLines: 3,),
         ),
         Padding(padding: EdgeInsets.symmetric(
           horizontal: getProportionateScreenWidth(26),

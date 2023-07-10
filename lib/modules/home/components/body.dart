@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/modules/home/components/product_container.dart';
 import 'package:e_commerce_app/modules/home/components/special_for_you.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -55,7 +56,7 @@ class Body extends StatelessWidget {
                 height: getProportionateScreenWidth(60),
               ),
               SpecialForYou(),
-              PopularProducts(),
+              ProductContainer(),
             ],
           ),
         ],

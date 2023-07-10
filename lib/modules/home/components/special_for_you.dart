@@ -12,7 +12,7 @@ class SpecialForYou extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: getProportionateScreenWidth(5),),
-          SectionText(text: 'Special for you'),
+          SectionText(text: 'Special for you',function: (){}),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
