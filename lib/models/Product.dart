@@ -4,6 +4,7 @@ class Product {
   final int id;
   final String title;
   final String image;
+   bool isFavorite;
   final double price;
   //final double rate;
 
@@ -11,6 +12,7 @@ class Product {
     required this.id,
     required this.title,
     required this.image,
+    this.isFavorite = false,
     required this.price,
    // required this.rate,
   });
@@ -24,5 +26,16 @@ class Product {
      // rate: double.parse(json['rate'].toString()),
     );
   }
+
+  Map toJson() {
+    return {
+      'id': this.id,
+      'title': this.title,
+      'image': this.image,
+      'price': this.price,
+    };
+  }
+
+
 }
 

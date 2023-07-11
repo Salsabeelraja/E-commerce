@@ -3,6 +3,8 @@ import 'package:e_commerce_app/shared/component/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../favorite_screen/favorite_screen.dart';
+
 class CustomBottomNav extends StatelessWidget {
   const CustomBottomNav({super.key,
   required  this.menu});
@@ -27,8 +29,14 @@ class CustomBottomNav extends StatelessWidget {
               icon: SvgPicture.asset('assets/icons/Shop Icon.svg'),
             ),
             IconButton(
-              onPressed: () {},
-              icon: SvgPicture.asset('assets/icons/Heart Icon.svg'),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => FavoriteScreen()));
+              },
+              icon: SvgPicture.asset('assets/icons/Heart Icon.svg',
+                color: menu == MenuState.favorite
+                    ? Colors.deepOrange
+                    : Colors.grey,
+              ),
             ),
             IconButton(
               onPressed: () {},

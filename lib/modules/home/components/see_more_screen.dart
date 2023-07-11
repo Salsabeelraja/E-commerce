@@ -91,12 +91,8 @@ class _SeeMoreProductsState extends State<SeeMoreProducts> {
                                 DetailsScreen(
                                     productId: data[index].id)));
                           },
-                          child: PopularProducts(
-                              title: data[index].title,
-                              image: data[index].image,
-                              price: data[index].price),
-                        ),
-                      );
+                          child: PopularProducts(product: data[index]),
+                      ));
                     },
               ));
             } else if (snapshot.hasError) {

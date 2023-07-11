@@ -25,6 +25,7 @@ class ProductContainer extends StatefulWidget {
 class _ProductContainerState extends State<ProductContainer> {
   late Future<List<Product>> futureProduct;
 
+
   Future<List<Product>> fetchAlbum() async {
     var url = Uri.parse("https://fakestoreapi.com/products");
 
@@ -92,10 +93,7 @@ class _ProductContainerState extends State<ProductContainer> {
                                         DetailsScreen(
                                             productId: data[index].id)));
                                   },
-                                  child: PopularProducts(
-                                      title: data[index].title,
-                                      image: data[index].image,
-                                      price: data[index].price),
+                                  child: PopularProducts(product: data[index]),
                                 ),
                               );
                             },

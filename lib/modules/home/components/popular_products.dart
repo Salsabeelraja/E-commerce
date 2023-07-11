@@ -1,24 +1,41 @@
+import 'dart:convert';
+
 import 'package:e_commerce_app/models/Product.dart';
 import 'package:e_commerce_app/modules/home/components/product_container.dart';
 import 'package:e_commerce_app/modules/home/components/section_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../../size_config.dart';
 
-class PopularProducts extends StatelessWidget {
-  const PopularProducts({super.key,
-    required this.title,
-  required this.image,
-  required this.price,
-  });
-  bool isFavorite = false;
-  List<Product> favoriteItems = [];
-
+class PopularProducts extends StatefulWidget {
+  PopularProducts({super.key,
+    required this.product});
   //final int id;
-  final String title;
-  final String image;
-  final double price;
+  final Product product;
+
+  @override
+  State<PopularProducts> createState() => _PopularProductsState();
+}
+
+class _PopularProductsState extends State<PopularProducts> {
+  late SharedPreferences prefs;
+  List<Product> products = [];
+  bool isFavorite = false;
+
+  void saveToFavorite() async{
+    prefs = await SharedPreferences.getInstance();
+    List<String> productsEncoded = products.map((product) => jsonEncode(product.toJson())).toList();
+    prefs.setStringList('products', productsEncoded);
+  }
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    saveToFavorite();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,13 +50,13 @@ class PopularProducts extends StatelessWidget {
             color: Colors.grey[200],
             borderRadius: BorderRadius.circular(15),
           ),
-          child: Image.network(image),
+          child: Image.network(widget.product.image),
         ),
         SizedBox(
           height: 10,
         ),
         Text(
-          title,
+          widget.product.title,
           maxLines: 2,
           style: TextStyle(
               color: Colors.black,
@@ -53,7 +70,7 @@ class PopularProducts extends StatelessWidget {
               .spaceBetween,
           children: [
             Text(
-              '\$${price}',
+              '\$${widget.product.price}',
               style: TextStyle(
                   color: Colors.deepOrange,
                   fontWeight: FontWeight.w600,
@@ -66,14 +83,17 @@ class PopularProducts extends StatelessWidget {
             InkWell(
               onTap: () {
                 setState(() {
-                  if (product.isFavorite) {
-                    favoriteItems.remove(product);
-                  } else {
-                    favoriteItems.add(product);
-                  }
-                  product.isFavorite = !product.isFavorite;
+                   if(!widget.product.isFavorite ){
+                     products.add(widget.product);
+                     saveToFavorite();
+                     widget.product.isFavorite = true;
+                     notifyListener();
+                   } else {
+                     products.remove(widget.product);
+                     widget.product.isFavorite = false;
+                     notifyListener();
+                   }
                 });
-
               },
               borderRadius: BorderRadius.circular(30),
               child: Container(
@@ -82,17 +102,13 @@ class PopularProducts extends StatelessWidget {
                 width: getProportionateScreenWidth(50),
                 height: getProportionateScreenWidth(50),
                 decoration: BoxDecoration(
-                    color: /* product.isFavourite
-                                        ? Color(0xFF979797).withOpacity(0.1)
-                                        :*/
-                    Color(0xFFFF7643).withOpacity(0.15),
+                    color: widget.product.isFavorite ?  Color(0xFFFF7643).withOpacity(0.15)
+                    :Color(0xFF979797).withOpacity(0.1),
                     shape: BoxShape.circle),
                 child: SvgPicture.asset(
                   'assets/icons/Heart Icon_2.svg',
-                  color: /* product.isFavourite
-                                      ? Color(0xFFDBDEE4)
-                                      :*/
-                  Color(0xFFFF4848),
+                  color:  widget.product.isFavorite ? Color(0xFFFF4848)
+                  :Color(0xFFDBDEE4),
                 ),
               ),
             )
