@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 import '../../shared/component/defaultButton.dart';
 import '../../size_config.dart';
 import 'components/CustomAppBar.dart';
+import 'components/color_pick_dots.dart';
 import 'components/product_desc.dart';
 import 'components/product_images.dart';
 import 'components/top_rounded_container.dart';
@@ -68,13 +69,14 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       child: Column(
                         children: [
                           ProductDesc(
+                            productIsFav: data.isFavorite,
                             title: data.title,
                             pressSeeMore: () {},
                           ),
                           TopRoundedContainer(color: Color(0xFFF6F7F9),
                               child: Column(
                                 children: [
-                                  //ColorPickDots(product: product),
+                                  ColorPickDots(),
                                   TopRoundedContainer(
                                       color: Colors.white,
                                       child: Padding(

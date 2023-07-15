@@ -5,6 +5,7 @@ Widget defaultTextField({
   required String labelText,
   required String hintText,
   required Icon icon,
+  bool isEnabled = false,
 }) =>
     TextField(
       style: TextStyle(fontSize: 16),
@@ -14,7 +15,7 @@ Widget defaultTextField({
           ),
          // contentPadding: EdgeInsets.only(left: 8),
           prefixIcon:  icon,
-          enabled: false,
+          enabled: isEnabled,
           floatingLabelBehavior: FloatingLabelBehavior.always,
           labelText: labelText,
           hintText: hintText,

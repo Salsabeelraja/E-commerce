@@ -3,7 +3,7 @@ import 'package:e_commerce_app/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'components/body.dart';
-import 'components/custom_bottom_nav.dart';
+import '../../shared/component/custom_bottom_nav.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

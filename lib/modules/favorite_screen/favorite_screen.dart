@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../models/Product.dart';
+import '../../shared/component/custom_bottom_nav.dart';
+import '../../shared/component/enums.dart';
 import '../details_screen/details_screen.dart';
 import '../home/components/popular_products.dart';
 
@@ -47,15 +49,6 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-        ),
         backgroundColor: Colors.transparent,
         title: Text(
           'WishList',
@@ -88,6 +81,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                   ));
             },
           )),
+      bottomNavigationBar: CustomBottomNav(menu: MenuState.favorite),
     );
   }
 }

@@ -20,7 +20,7 @@ class PopularProducts extends StatefulWidget {
 
 class _PopularProductsState extends State<PopularProducts> {
   late SharedPreferences prefs;
-  List<Product> products = [];
+  static List<Product> products = [];
   bool isFavorite = false;
 
   void saveToFavorite() async{
@@ -87,11 +87,9 @@ class _PopularProductsState extends State<PopularProducts> {
                      products.add(widget.product);
                      saveToFavorite();
                      widget.product.isFavorite = true;
-                     notifyListener();
                    } else {
                      products.remove(widget.product);
                      widget.product.isFavorite = false;
-                     notifyListener();
                    }
                 });
               },

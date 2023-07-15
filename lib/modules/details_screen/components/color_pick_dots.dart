@@ -4,15 +4,18 @@ import 'package:e_commerce_app/size_config.dart';
 import 'package:flutter/material.dart';
 
 class ColorPickDots extends StatefulWidget {
-  const ColorPickDots({super.key, required this.product});
-
-  final Product product;
+  const ColorPickDots({super.key});
 
   @override
   State<ColorPickDots> createState() => _ColorPickDotsState();
 }
 
 class _ColorPickDotsState extends State<ColorPickDots> {
+  List<Color> colors = [
+    Color(0xFFF6625E),
+    Color(0xFF836DB8),
+    Color(0xFFDECB9C),
+    Colors.white,];
   int selectedColor = 3;
   @override
   Widget build(BuildContext context) {
@@ -20,15 +23,15 @@ class _ColorPickDotsState extends State<ColorPickDots> {
       horizontal: getProportionateScreenWidth(40),
     ),
       child: Row(
-        /*children: [
-          ...List.generate(widget.product.colors.length,
-                  (index) => ColorDots( widget.product.colors[index],
+        children: [
+          ...List.generate(colors.length,
+                  (index) => ColorDots(colors[index],
                    index)),
           Spacer(),
           RoundedButton(icon: Icon(Icons.remove), press: () {}),
           SizedBox(width: getProportionateScreenWidth(20),),
           RoundedButton(icon: Icon(Icons.add), press: () {}),
-        ],*/
+        ],
       ),
     );
   }

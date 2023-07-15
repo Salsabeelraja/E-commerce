@@ -21,6 +21,7 @@ class Body extends StatelessWidget {
             child: Column(
               children: [
                 ProductDesc(
+                  productIsFav: product.isFavorite,
                   title: product.title,
                   pressSeeMore: () {},
                 ),

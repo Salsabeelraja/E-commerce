@@ -1,9 +1,22 @@
+import 'package:e_commerce_app/modules/profile_screen/profile_settings.dart';
 import 'package:e_commerce_app/shared/component/defaultButton.dart';
 import 'package:e_commerce_app/shared/component/defaultTextField.dart';
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatelessWidget {
+import '../../shared/component/custom_bottom_nav.dart';
+import '../../shared/component/enums.dart';
+
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  bool isEnabled = false;
+  int index = 0;
+  String btnText = 'Edit Profile';
 
   @override
   Widget build(BuildContext context) {
@@ -52,8 +65,13 @@ class ProfileScreen extends StatelessWidget {
                             style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,fontSize: 20),
                           ),
                           SizedBox(width: 8,),
-                          Icon(
-                            Icons.settings,
+                          IconButton(
+                            onPressed: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) => ProfileSettings())
+                              );
+                            },
+                            icon: Icon(Icons.settings),
                             color: Colors.black,
                           ),
                         ]),
@@ -97,68 +115,87 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 12),
-                      child: Column(
-                        children: [
-                      defaultTextField(
-                        labelText: 'Full Name',
-                        hintText: 'Ali Ahmad',
-                        icon: Icon(
-                          Icons.person_outline,
-                          color: Colors.deepOrange,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            defaultTextField(
+                              isEnabled: isEnabled,
+                              labelText: 'Full Name',
+                              hintText: 'Ali Ahmad',
+                              icon: Icon(
+                                Icons.person_outline,
+                                color: Colors.deepOrange,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 22,
+                            ),
+                            defaultTextField(
+                              isEnabled: isEnabled,
+                              labelText: 'Email',
+                              hintText: 'example@gmail.com',
+                              icon: Icon(
+                                Icons.email_outlined,
+                                color: Colors.deepOrange,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 22,
+                            ),
+                            defaultTextField(
+                              isEnabled: isEnabled,
+                              labelText: 'Phone Number',
+                              hintText: '+96278*******',
+                              icon: Icon(
+                                Icons.phone_android,
+                                color: Colors.deepOrange,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 22,
+                            ),
+                            defaultTextField(
+                              isEnabled: isEnabled,
+                              labelText: 'Address',
+                              hintText: 'Amman-Jordan',
+                              icon: Icon(
+                                Icons.location_on_outlined,
+                                color: Colors.deepOrange,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 22,
+                            ),
+                            defaultTextField(
+                              isEnabled: isEnabled,
+                              labelText: 'Password',
+                              hintText: '********',
+                              icon: Icon(
+                                Icons.lock_outline,
+                                color: Colors.deepOrange,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            defaultButton(function: () {
+                              setState(() {
+                                if (index == 0) {
+                                  isEnabled = true;
+                                  btnText = 'Save Changes';
+                                  index = 1;
+                                } else {
+                                  isEnabled = false;
+                                  btnText = 'Edit Profile';
+                                  index = 0;
+                                }
+                              });
+                            }, text: btnText),
+                            SizedBox(
+                              height: 2,
+                            ),
+                          ],
                         ),
-                      ),
-                          SizedBox(
-                            height: 22,
-                          ),
-                          defaultTextField(
-                            labelText: 'Email',
-                            hintText: 'example@gmail.com',
-                            icon: Icon(
-                              Icons.email_outlined,
-                              color: Colors.deepOrange,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 22,
-                          ),
-                          defaultTextField(
-                            labelText: 'Phone Number',
-                            hintText: '+96278*******',
-                            icon: Icon(
-                              Icons.phone_android,
-                              color: Colors.deepOrange,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 22,
-                          ),
-                          defaultTextField(
-                            labelText: 'Address',
-                            hintText: 'Amman-Jordan',
-                            icon: Icon(
-                              Icons.location_on_outlined,
-                              color: Colors.deepOrange,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 22,
-                          ),
-                          defaultTextField(
-                            labelText: 'Password',
-                            hintText: '********',
-                            icon: Icon(
-                              Icons.lock_outline,
-                              color: Colors.deepOrange,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          defaultButton(function: () {}, text: 'Edit Profile'),
-                          SizedBox(
-                            height: 2,
-                          ),
-                        ],
                       ),
                     ),
                   ],
@@ -167,7 +204,9 @@ class ProfileScreen extends StatelessWidget {
             ],
           ),
         ),
+        bottomNavigationBar: CustomBottomNav(menu: MenuState.profile),
       ),
     );
   }
 }
+
