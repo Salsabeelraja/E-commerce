@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
       child: Scaffold(
         appBar: AppBar(
           elevation: 0,
-          backgroundColor: Colors.white24,
+        //backgroundColor: Theme.of(context).colorScheme.secondary,
           leading:
           IconButton(onPressed: () {
             Navigator.of(context).pop();

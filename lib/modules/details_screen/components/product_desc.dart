@@ -5,14 +5,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../models/Product.dart';
 
 class ProductDesc extends StatelessWidget {
-  const ProductDesc(
+   ProductDesc(
       {super.key,
       required this.title,
       this.pressSeeMore,
       required this.productIsFav});
 
   final String title;
-  final bool productIsFav;
+   bool productIsFav;
   final GestureTapCallback? pressSeeMore;
 
   @override

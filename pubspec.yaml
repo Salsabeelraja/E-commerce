@@ -39,6 +39,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg:
   http:
+  remove_background:
 dev_dependencies:
   flutter_test:
     sdk: flutter

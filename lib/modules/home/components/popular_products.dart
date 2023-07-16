@@ -59,7 +59,7 @@ class _PopularProductsState extends State<PopularProducts> {
           widget.product.title,
           maxLines: 2,
           style: TextStyle(
-              color: Colors.black,
+              color: Theme.of(context).colorScheme.secondary,
               fontSize: getProportionateScreenWidth(30)),
         ),
         SizedBox(
@@ -85,8 +85,8 @@ class _PopularProductsState extends State<PopularProducts> {
                 setState(() {
                    if(!widget.product.isFavorite ){
                      products.add(widget.product);
-                     saveToFavorite();
                      widget.product.isFavorite = true;
+                     saveToFavorite();
                    } else {
                      products.remove(widget.product);
                      widget.product.isFavorite = false;

@@ -37,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Text(
               'Welcome to TOKOTO, Let\'s shop!',
               style: TextStyle(
-                color: Colors.black38,
+                color: Theme.of(context).colorScheme.secondary,
                 fontSize: 15,
               ),
               textAlign: TextAlign.center,

@@ -20,7 +20,7 @@ class SectionText extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(text, style: TextStyle(
-            color: Colors.black,
+            color: Theme.of(context).colorScheme.secondary,
             fontSize: getProportionateScreenWidth(45),
           ),),
           TextButton(

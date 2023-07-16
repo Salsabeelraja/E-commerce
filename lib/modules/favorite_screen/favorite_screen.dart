@@ -35,6 +35,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
            products.map((product) => Product.fromJson(json.decode(product))).toList();
      });
     }
+   return null;
  }
 
   @override
@@ -52,7 +53,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         backgroundColor: Colors.transparent,
         title: Text(
           'WishList',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Theme.of(context).colorScheme.secondary),
         ),
       ),
       body: Padding(

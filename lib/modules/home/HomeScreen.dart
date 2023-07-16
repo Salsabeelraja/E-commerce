@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           toolbarHeight: 80,
-          backgroundColor: Colors.white12,
+         // backgroundColor: Theme.of(context).colorScheme.primary,
           elevation: 0,
           leadingWidth: 400,
           leading: Padding(
@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       width: SizeConfig.screenWidth * 0.6, //60% of our width
                       //height: 50,
                       decoration: BoxDecoration(
-                        color: Colors.grey[100],
+                        color: Theme.of(context).colorScheme.primary,
                         borderRadius: BorderRadius.circular(15),
                         //or 400
                       ),
@@ -62,10 +62,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: getProportionateScreenWidth(100),
                         width: getProportionateScreenWidth(100),
                         decoration: BoxDecoration(
-                          color: Colors.grey[100],
+                          color: Theme.of(context).colorScheme.primary,
                           shape: BoxShape.circle,
                         ),
-                        child: SvgPicture.asset('assets/icons/Cart Icon.svg'),
+                        child: SvgPicture.asset('assets/icons/Cart Icon.svg', color: Theme.of(context).colorScheme.secondary),
                       ),
                     ),
                     InkWell(
@@ -80,10 +80,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           height: getProportionateScreenWidth(100),
                           width: getProportionateScreenWidth(100),
                           decoration: BoxDecoration(
-                            color: Colors.grey[100],
+                            color: Theme.of(context).colorScheme.primary,
                             shape: BoxShape.circle,
                           ),
-                          child: SvgPicture.asset('assets/icons/Bell.svg'),
+                          child: SvgPicture.asset('assets/icons/Bell.svg', color: Theme.of(context).colorScheme.secondary,),
                         ),
                         Positioned(
                           top: -4,
@@ -94,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             decoration: BoxDecoration(
                               color: Color(0xFFFF4848),
                               shape: BoxShape.circle,
-                              border: Border.all(width: 1, color: Colors.white),
+                              border: Border.all(width: 1, color: Theme.of(context).colorScheme.background),
                             ),
                             child: Center(
                               child: Text(

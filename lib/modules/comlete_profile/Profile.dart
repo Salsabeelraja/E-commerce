@@ -17,7 +17,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
         child: Scaffold(
           appBar: AppBar(
             elevation: 0,
-            backgroundColor: Colors.white24,
+           // backgroundColor: Colors.white24,
             leading:
             IconButton(onPressed: () {
               Navigator.of(context).pop();

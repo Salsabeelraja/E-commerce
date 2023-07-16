@@ -18,7 +18,7 @@ class CustomBottomNav extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 15),
         decoration: BoxDecoration(
-          color: Colors.white,
+          //color: Theme.of(context).colorScheme.primary,
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(40), topRight: Radius.circular(40)),
         ),

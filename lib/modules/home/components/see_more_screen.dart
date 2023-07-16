@@ -61,7 +61,7 @@ class _SeeMoreProductsState extends State<SeeMoreProducts> {
         backgroundColor: Colors.transparent,
         title: Text(
           'All Products',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Theme.of(context).colorScheme.secondary),
         ),
       ),
       body: FutureBuilder(
